@@ -2,8 +2,17 @@ plugins {
     id 'java'
 }
 
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'it.giopanno.Tris'
+        )
+    }
+}
+
 group = 'it.giopanno'
 version = '1.0-SNAPSHOT'
+
 
 repositories {
     mavenCentral()

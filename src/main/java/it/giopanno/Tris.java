@@ -1,3 +1,5 @@
+package it.giopanno;
+
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -25,10 +27,11 @@ public class Tris {
     private static void printMap(ConcurrentHashMap<Integer, Character> map){
         clearscreen();
         for(int i = 0; i < map.size(); i++){
-            if((i+1) % 3 == 0) {
-                System.out.print(map.get(i) + "\n");
+            if((i+1) % 3 == 0 && i!=map.size()-1) {
+                System.out.println(map.get(i));
+                System.out.println("----------");
             } else {
-                System.out.print(map.get(i) + "   ");
+                System.out.print(map.get(i) + (i == map.size()-1 ? "" : " | "));
             }
         }
     }
