@@ -23,7 +23,7 @@ public class Tris {
     }
 
     private static void printMap(ConcurrentHashMap<Integer, Character> map){
-        System.out.println("\n");
+        clearscreen();
         for(int i = 0; i < map.size(); i++){
             if((i+1) % 3 == 0) {
                 System.out.print(map.get(i) + "\n");
@@ -86,13 +86,15 @@ public class Tris {
 
             trisMap.put(n-1, toSet);
 
-
-            finish = isFinished(toSet);
+            finish = isFinished(toSet); //check if finished
+            
+            //change player
             if(toSet == 'X'){
                 toSet = 'O';
             } else toSet = 'X';
-            clearscreen();
+            
             printMap(trisMap);
+            
         } while(!finish);
     }
 }
